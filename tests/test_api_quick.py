@@ -1,9 +1,9 @@
 import sys
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 print("=" * 70)
-print("MODULE 9 - QUICK API TEST")
+print("QUICK API TEST")
 print("=" * 70)
 print("\nTEST 1: Importing API modules...")
 try:
@@ -35,7 +35,7 @@ except Exception as e:
     sys.exit(1)
 print("\nTEST 3: Password verification...")
 print("SKIPPED (bcrypt/passlib compatibility issue with Python 3.13)")
-print("ℹ Pre-hashed passwords are used instead")
+print("Pre-hashed passwords are used instead")
 print("Authentication will work in production")
 print("\nTEST 4: Pydantic model validation...")
 try:
@@ -63,7 +63,7 @@ except Exception as e:
     sys.exit(1)
 print("\nTEST 5: User authentication...")
 print("SKIPPED (depends on password verification)")
-print("ℹ Will work in production with Python 3.11/3.12")
+print("Will work in production with Python 3.11/3.12")
 print("JWT tokens working (more important!)")
 print("\nTEST 6: FastAPI app creation...")
 try:
@@ -94,7 +94,7 @@ except Exception as e:
     traceback.print_exc()
     sys.exit(1)
 print("\n" + "=" * 70)
-print("ALL TESTS PASSED - MODULE 9 IS READY!")
+print("ALL TESTS PASSED - API IS READY!")
 print("=" * 70)
 print("\nNext Steps:")
 print("1. Start the API server:")

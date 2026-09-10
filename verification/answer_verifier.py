@@ -380,10 +380,10 @@ class AnswerVerifier:
         )
         lines.append("\nISSUES:")
         for issue in result.issues_found:
-            lines.append(f"• {issue}")
+            lines.append(f"- {issue}")
         lines.append("\nRECOMMENDATIONS:")
         for rec in result.recommendations:
-            lines.append(f"• {rec}")
+            lines.append(f"- {rec}")
         lines.append("\nMETADATA:")
         lines.append(f"Sources used: {len(result.source_chunks)}")
         lines.append(f"Verification cost: ${result.verification_cost:.4f}")

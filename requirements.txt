@@ -6,6 +6,7 @@ python-jose[cryptography]==3.3.0
 argon2-cffi==23.1.0
 
 openai==1.14.0
+httpx==0.27.2
 cohere==4.57
 pinecone-client==3.2.2
 

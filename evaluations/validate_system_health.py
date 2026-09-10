@@ -31,7 +31,7 @@ def print_warning(text: str):
 
 
 def print_info(text: str):
-    print(f"{Colors.BLUE}ℹ {text}{Colors.END}")
+    print(f"{Colors.BLUE}{text}{Colors.END}")
 
 
 class SystemHealthValidator:
@@ -280,11 +280,11 @@ class SystemHealthValidator:
     def estimate_test_costs(self):
         print_header("7. COST ESTIMATION FOR TESTING")
         print_info("Cost per query breakdown:")
-        print("• Embedding: $0.0001")
-        print("• Retrieval: $0.0000 (Pinecone)")
-        print("• Reranking: $0.0003 (Cohere)")
-        print("• Generation: $0.0137 (GPT-4)")
-        print("• Verification: $0.0091 (GPT-4)")
+        print("- Embedding: $0.0001")
+        print("- Retrieval: $0.0000 (Pinecone)")
+        print("- Reranking: $0.0003 (Cohere)")
+        print("- Generation: $0.0137 (GPT-4)")
+        print("- Verification: $0.0091 (GPT-4)")
         print("" + "-" * 40)
         print("TOTAL: $0.0232 per query\n")
         scenarios = {
@@ -294,7 +294,7 @@ class SystemHealthValidator:
         }
         print_info("Test scenarios:")
         for scenario, cost in scenarios.items():
-            print(f"• {scenario:.<45} ${cost:.2f}")
+            print(f"- {scenario:.<45} ${cost:.2f}")
         print_success("\nRecommended: Start with $10 in OpenAI credits")
         print_info("This gives you ~400 queries of buffer for testing\n")
 
@@ -362,12 +362,12 @@ class SystemHealthValidator:
                 source_chunks=source_chunks,
             )
             print_success("Verification complete!")
-            print_info(f"• Overall Score: {verification.overall_score:.1f}%")
-            print_info(f"• Is Trustworthy: {verification.is_trustworthy}")
+            print_info(f"- Overall Score: {verification.overall_score:.1f}%")
+            print_info(f"- Is Trustworthy: {verification.is_trustworthy}")
             print_info(
-                f"• Completeness: {verification.completeness.completeness_score:.1f}%"
+                f"- Completeness: {verification.completeness.completeness_score:.1f}%"
             )
-            print_info(f"• Issues Found: {len(verification.issues_found)}")
+            print_info(f"- Issues Found: {len(verification.issues_found)}")
             self.results["e2e_test"] = True
             print_success("\nEND-TO-END PIPELINE: WORKING!")
             return True
@@ -409,9 +409,9 @@ class SystemHealthValidator:
             print_success("ALL SYSTEMS GO!")
             print_success("System is ready for testing")
             print_info("\nYou can now run:")
-            print_info("• python3 test_complete_system.sh")
-            print_info("• python3 validate_project_claims.py")
-            print_info("• ./start_api.sh\n")
+            print_info("- python3 test_complete_system.sh")
+            print_info("- python3 validate_project_claims.py")
+            print_info("- ./start_api.sh\n")
             return True
 
 

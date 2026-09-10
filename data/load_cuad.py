@@ -160,7 +160,7 @@ def extract_qa_pairs(dataset):
     print("\nCreating evaluation Q&A pairs from contracts...")
     qa_pairs = []
     print(
-        "ℹ Note: Using placeholder Q&A pairs. Load CUAD Q&A dataset separately for full evaluation."
+        "Note: Using placeholder Q&A pairs. Load CUAD Q&A dataset separately for full evaluation."
     )
     qa_pairs.append(
         {

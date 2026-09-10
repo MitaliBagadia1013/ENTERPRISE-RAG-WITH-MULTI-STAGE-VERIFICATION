@@ -160,7 +160,6 @@ async def root():
 
 
 if __name__ == "__main__":
-    "\nRun development server\n\nUsage:\npython api/main.py\n\nProduction:\nUse Gunicorn or Uvicorn directly:\nuvicorn api.main:app --host 0.0.0.0 --port 8000 --workers 4\n"
     import uvicorn
 
     uvicorn.run(
