@@ -71,6 +71,14 @@ Run the API server:
 python -m uvicorn api.main:app --host 0.0.0.0 --port 8000
 ```
 
+Launch the Streamlit UI (with the API running):
+
+```bash
+streamlit run app.py
+```
+
+Available at `http://localhost:8501`. Log in with `admin@company.com` / `admin123` (or `user@company.com` / `user123` for a lower-privilege demo), then ask a question. The UI shows the answer, cache hit/miss status, verification confidence, and the source chunks used.
+
 ## Running Evaluations
 
 **RAGAS evaluation** — retrieval precision on 1,500 queries (~187 min, ~$67):
@@ -132,6 +140,7 @@ Extensive unit-level testing (retrieval) plus focused integration testing (end-t
 ```
 VeriRAG-Multi-Stage-Verification/
 ├── api/                 # FastAPI backend, auth, routes
+├── ui/                   # Streamlit web interface
 ├── retrieval/            # Query expansion, hybrid search, reranking
 ├── verification/         # Hallucination detection, self-correction
 ├── cache/                # Redis semantic cache
@@ -140,6 +149,7 @@ VeriRAG-Multi-Stage-Verification/
 ├── evaluations/          # RAGAS + production validation scripts
 ├── results/              # Evaluation output
 ├── data/cuad/            # 510 legal contracts, chunks, Q&A pairs
+├── app.py                # Streamlit application launcher
 └── requirements.txt
 ```
 
