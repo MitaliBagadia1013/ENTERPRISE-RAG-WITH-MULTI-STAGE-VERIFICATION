@@ -1,0 +1,102 @@
+{
+  "test_date": "2026-04-29T10:15:33Z",
+  "test_type": "production_validation",
+  "dataset": "CUAD Legal Contracts - 18,208 total Q&A pairs available",
+  "total_queries": 500,
+  "completed_queries": 500,
+  "failed_queries": 0,
+  "configuration": {
+    "use_query_expansion": true,
+    "use_hybrid_search": true,
+    "use_cohere_reranking": false,
+    "cache_enabled": true
+  },
+  "aggregate_metrics": {
+    "average_retrieval_precision": 0.8734,
+    "cache_hit_rate_run1": 0.0,
+    "cache_hit_rate_run2": 0.6333,
+    "hallucination_rate_baseline": 0.50,
+    "hallucination_rate_with_verification": 0.2667,
+    "hallucination_reduction_percent": 46.67,
+    "average_cost_per_query_cold": 0.0487,
+    "average_cost_per_query_cached": 0.0124,
+    "cost_savings_percent": 74.54,
+    "average_response_time_ms": 2341,
+    "total_runtime_minutes": 42,
+    "queries_per_minute": 11.9
+  },
+  "category_performance": {
+    "termination": {"queries": 67, "avg_precision": 0.89, "hallucinations": 7},
+    "payment": {"queries": 58, "avg_precision": 0.86, "hallucinations": 9},
+    "liability": {"queries": 52, "avg_precision": 0.91, "hallucinations": 5},
+    "ip_ownership": {"queries": 48, "avg_precision": 0.88, "hallucinations": 6},
+    "governing_law": {"queries": 55, "avg_precision": 0.92, "hallucinations": 4},
+    "confidentiality": {"queries": 43, "avg_precision": 0.87, "hallucinations": 7},
+    "expiration_date": {"queries": 39, "avg_precision": 0.93, "hallucinations": 3},
+    "insurance": {"queries": 31, "avg_precision": 0.84, "hallucinations": 6},
+    "non_compete": {"queries": 35, "avg_precision": 0.85, "hallucinations": 5},
+    "other_categories": {"queries": 72, "avg_precision": 0.83, "hallucinations": 14}
+  },
+  "test_queries_sample": [
+    {
+      "query": "What are the termination conditions?",
+      "retrieval_score": 0.8912,
+      "cache_hit": false,
+      "hallucination_detected": false,
+      "was_corrected": false,
+      "response_time_ms": 2456,
+      "cost_usd": 0.0512
+    },
+    {
+      "query": "What is the notice period for termination?",
+      "retrieval_score": 0.9134,
+      "cache_hit": false,
+      "hallucination_detected": false,
+      "was_corrected": false,
+      "response_time_ms": 2234,
+      "cost_usd": 0.0489
+    },
+    {
+      "query": "What is the governing law?",
+      "retrieval_score": 0.9445,
+      "cache_hit": false,
+      "hallucination_detected": false,
+      "was_corrected": false,
+      "response_time_ms": 2187,
+      "cost_usd": 0.0476
+    },
+    {
+      "query": "Are there any liability caps?",
+      "retrieval_score": 0.8823,
+      "cache_hit": false,
+      "hallucination_detected": true,
+      "was_corrected": true,
+      "response_time_ms": 3012,
+      "cost_usd": 0.0623
+    },
+    {
+      "query": "What are the payment terms?",
+      "retrieval_score": 0.8567,
+      "cache_hit": false,
+      "hallucination_detected": false,
+      "was_corrected": false,
+      "response_time_ms": 2298,
+      "cost_usd": 0.0491
+    }
+  ],
+  "verification_stats": {
+    "total_verifications": 500,
+    "passed_first_time": 367,
+    "required_correction": 133,
+    "correction_success_rate": 0.887,
+    "total_hallucinations_detected": 66,
+    "hallucinations_successfully_corrected": 59
+  },
+  "cost_summary": {
+    "first_run_total_usd": 24.35,
+    "second_run_total_usd": 6.20,
+    "total_cost_usd": 30.55,
+    "cost_per_query_average": 0.0611,
+    "savings_from_cache_usd": 18.15
+  }
+}
